@@ -1,1 +1,1 @@
-export * from './sampleFunction.ts';
+export * from "./tailwind.helpers.ts";
