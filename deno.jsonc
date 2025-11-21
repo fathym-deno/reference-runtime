@@ -2,7 +2,12 @@
   "name": "@fathym/runtime",
   "version": "0.0.0",
   "exports": {
-    ".": "./src/.exports.ts"
+    "./deno-kv": "./src/deno-kv/.exports.ts",
+    "./fluent": "./src/fluent/.exports.ts",
+    "./oauth": "./src/oauth/.exports.ts",
+    "./services": "./src/services/.exports.ts",
+    "./tailwind": "./src/tailwind/.exports.ts",
+    "./workers": "./src/workers/.exports.ts"
   },
   "license": "MIT",
   "tasks": {
