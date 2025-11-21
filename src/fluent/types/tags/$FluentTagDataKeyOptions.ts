@@ -1,4 +1,4 @@
-import type { $FluentTagTypeOptions } from "./$FluentTagTypeOptions.ts";
+import type { $FluentTagTypeOptions } from './$FluentTagTypeOptions.ts';
 
 /**
  * `$FluentTagMethodsDataKeyOptions` provides specific key options for `"Methods"` tag type.
@@ -9,7 +9,7 @@ import type { $FluentTagTypeOptions } from "./$FluentTagTypeOptions.ts";
  * - `"generic"`: A generic method key.
  * - `"handlers"`: A key for method handlers.
  */
-export type $FluentTagMethodsDataKeyOptions = "generic" | "handlers";
+export type $FluentTagMethodsDataKeyOptions = 'generic' | 'handlers';
 
 /**
  * `$FluentTagDataKeyOptions<TType>` maps the provided tag type to its corresponding key options.
@@ -30,6 +30,6 @@ export type $FluentTagMethodsDataKeyOptions = "generic" | "handlers";
  * - For `"Methods"` tag type: Provides key options `"generic" | "handlers"`.
  * - For unrecognized tag types: Returns `never`.
  */
-export type $FluentTagDataKeyOptions<TType extends $FluentTagTypeOptions> =
-  TType extends "Methods" ? $FluentTagMethodsDataKeyOptions
-    : never;
+export type $FluentTagDataKeyOptions<TType extends $FluentTagTypeOptions> = TType extends 'Methods'
+  ? $FluentTagMethodsDataKeyOptions
+  : never;

@@ -1,7 +1,7 @@
-import type { FathymWorkerConfig } from "./FathymWorkerConfig.ts";
-import type { FathymWorkerMessage } from "./FathymWorkerMessage.ts";
-import { FathymWorkerMessageTypes } from "./FathymWorkerMessageTypes.ts";
-import { waitForCorrelation, waitForPing } from "./waitForCorrelation.ts";
+import type { FathymWorkerConfig } from './FathymWorkerConfig.ts';
+import type { FathymWorkerMessage } from './FathymWorkerMessage.ts';
+import { FathymWorkerMessageTypes } from './FathymWorkerMessageTypes.ts';
+import { waitForCorrelation, waitForPing } from './waitForCorrelation.ts';
 
 export class FathymWorkerClient<
   TConfig extends FathymWorkerConfig,
@@ -11,7 +11,7 @@ export class FathymWorkerClient<
   protected worker: Worker;
 
   constructor(workerPath: string) {
-    this.worker = new Worker(workerPath, { type: "module" });
+    this.worker = new Worker(workerPath, { type: 'module' });
   }
 
   public FireAndForget<TPayload = undefined>(
@@ -37,7 +37,7 @@ export class FathymWorkerClient<
     TResult = Record<string, unknown> | undefined,
     TPayload = undefined,
   >(_msg: TMessage & { Payload?: TPayload }): Promise<TResult> {
-    throw new Deno.errors.NotSupported("Streaming is still in development.");
+    throw new Deno.errors.NotSupported('Streaming is still in development.');
   }
 
   public async Start(

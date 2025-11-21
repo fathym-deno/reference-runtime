@@ -1,6 +1,6 @@
 // deno-lint-ignore-file no-explicit-any
-import type { $FluentTagDataKeyOptions } from "./$FluentTagDataKeyOptions.ts";
-import type { $FluentTagTypeOptions } from "./$FluentTagTypeOptions.ts";
+import type { $FluentTagDataKeyOptions } from './$FluentTagDataKeyOptions.ts';
+import type { $FluentTagTypeOptions } from './$FluentTagTypeOptions.ts';
 
 /**
  * `$FluentTagMethodsDataValueOptions` provides specific value types for each key in the `"Methods"` tag type.
@@ -69,5 +69,5 @@ type $SelectFluentTagMethodsDataValue<
 export type $FluentTagDataValueTypesOptions<
   TType extends $FluentTagTypeOptions,
   TData extends $FluentTagDataKeyOptions<TType>,
-> = TType extends "Methods" ? $SelectFluentTagMethodsDataValue<TType, TData>
+> = TType extends 'Methods' ? $SelectFluentTagMethodsDataValue<TType, TData>
   : never;

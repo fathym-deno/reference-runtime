@@ -1,4 +1,4 @@
-import type { DenoKVOAuth } from "./.deps.ts";
+import type { DenoKVOAuth } from './.deps.ts';
 
 /**
  * Creates a GitHub OAuth2 client configuration.
@@ -16,8 +16,8 @@ export function createGitHubOAuthConfig(
   const oAuthConfig: DenoKVOAuth.OAuth2ClientConfig = {
     clientId,
     clientSecret,
-    authorizationEndpointUri: "https://github.com/login/oauth/authorize",
-    tokenUri: "https://github.com/login/oauth/access_token",
+    authorizationEndpointUri: 'https://github.com/login/oauth/authorize',
+    tokenUri: 'https://github.com/login/oauth/access_token',
     defaults: { scope: scope },
   };
 

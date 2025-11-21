@@ -1,4 +1,4 @@
-import type { DenoKVOAuth } from "./.deps.ts";
+import type { DenoKVOAuth } from './.deps.ts';
 
 /**
  * Creates an Azure AD B2C OAuth2 client configuration.
@@ -19,11 +19,9 @@ export function creatAzureADB2COAuthConfig(
   tenantId: string,
   scope: string[],
 ): DenoKVOAuth.OAuth2ClientConfig {
-  const authEndpointUri =
-    `https://${domain}/${tenantId}/${policyName}/oauth2/v2.0/authorize`;
+  const authEndpointUri = `https://${domain}/${tenantId}/${policyName}/oauth2/v2.0/authorize`;
 
-  const tokenUri =
-    `https://${domain}/${tenantId}/${policyName}/oauth2/v2.0/token`;
+  const tokenUri = `https://${domain}/${tenantId}/${policyName}/oauth2/v2.0/token`;
 
   const oAuthConfig: DenoKVOAuth.OAuth2ClientConfig = {
     clientId,

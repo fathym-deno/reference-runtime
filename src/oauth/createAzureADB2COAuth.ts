@@ -1,6 +1,6 @@
-import { creatAzureADB2COAuthConfig } from "./creatAzureADB2COAuthConfig.ts";
-import { createOAuthHelpers } from "./createOAuthHelpers.ts";
-import type { OAuthHelpers } from "./OAuthHelpers.ts";
+import { creatAzureADB2COAuthConfig } from './creatAzureADB2COAuthConfig.ts';
+import { createOAuthHelpers } from './createOAuthHelpers.ts';
+import type { OAuthHelpers } from './OAuthHelpers.ts';
 
 /**
  * Creates an OAuth helpers object for Azure AD OAuth.

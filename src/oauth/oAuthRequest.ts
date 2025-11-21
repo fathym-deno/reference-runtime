@@ -1,5 +1,5 @@
-import { type DenoKVOAuth, redirectRequest } from "./.deps.ts";
-import { createOAuthHelpers } from "./createOAuthHelpers.ts";
+import { type DenoKVOAuth, redirectRequest } from './.deps.ts';
+import { createOAuthHelpers } from './createOAuthHelpers.ts';
 
 /**
  * The OAuth request handler.
@@ -24,7 +24,7 @@ export async function oAuthRequest(
 ): Promise<Response> {
   let oAuthPath = path;
 
-  if (oAuthPath.startsWith("/")) {
+  if (oAuthPath.startsWith('/')) {
     oAuthPath = oAuthPath.substring(1);
   }
 
@@ -33,8 +33,8 @@ export async function oAuthRequest(
   let resp: Response;
 
   switch (oAuthPath) {
-    case "signin": {
-      let callbackPath = oAuthPath.replace(oAuthPath, "callback");
+    case 'signin': {
+      let callbackPath = oAuthPath.replace(oAuthPath, 'callback');
 
       callbackPath = `${root}${callbackPath}`;
 
@@ -47,7 +47,7 @@ export async function oAuthRequest(
       break;
     }
 
-    case "callback": {
+    case 'callback': {
       try {
         const oldSessionId = await helpers.getSessionId(req);
 
@@ -59,9 +59,9 @@ export async function oAuthRequest(
 
         resp = response;
 
-        resp.headers.set("OAUTH_SESSION_ID", sessionId);
+        resp.headers.set('OAUTH_SESSION_ID', sessionId);
       } catch {
-        const signInPath = oAuthPath.replace(oAuthPath, "signin");
+        const signInPath = oAuthPath.replace(oAuthPath, 'signin');
 
         resp = redirectRequest(`${root}${signInPath}`, false, false);
       }
@@ -69,7 +69,7 @@ export async function oAuthRequest(
       break;
     }
 
-    case "signout": {
+    case 'signout': {
       resp = await helpers.signOut(req);
 
       break;

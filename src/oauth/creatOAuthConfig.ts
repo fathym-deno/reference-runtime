@@ -1,4 +1,4 @@
-import type { DenoKVOAuth } from "./.deps.ts";
+import type { DenoKVOAuth } from './.deps.ts';
 
 /**
  * Creates an OAuth2 client configuration.
