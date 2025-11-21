@@ -1,7 +1,10 @@
-import type { FathymWorkerConfig } from './FathymWorkerConfig.ts';
-import type { FathymWorkerMessage, FathymWorkerMessageHandler } from './FathymWorkerMessage.ts';
-import { FathymWorkerMessageTypes } from './FathymWorkerMessageTypes.ts';
-import { correlateResult } from './waitForCorrelation.ts';
+import type { FathymWorkerConfig } from "./FathymWorkerConfig.ts";
+import type {
+  FathymWorkerMessage,
+  FathymWorkerMessageHandler,
+} from "./FathymWorkerMessage.ts";
+import { FathymWorkerMessageTypes } from "./FathymWorkerMessageTypes.ts";
+import { correlateResult } from "./waitForCorrelation.ts";
 
 export abstract class FathymWorker<
   TConfig extends FathymWorkerConfig,
@@ -19,13 +22,13 @@ export abstract class FathymWorker<
 
     this.workerMessageHandlers = this.loadWorkerMessageHandlers();
 
-    if (typeof worker.postMessage === 'function') {
+    if (typeof worker.postMessage === "function") {
       this.sendMessage({
         Type: FathymWorkerMessageTypes.Ping,
         CorrelationID: crypto.randomUUID(),
       } as TMessage);
 
-      worker.addEventListener('message', (event: MessageEvent<TMessage>) => {
+      worker.addEventListener("message", (event: MessageEvent<TMessage>) => {
         this.handleWorkerMessage(event);
       });
     }
@@ -48,7 +51,8 @@ export abstract class FathymWorker<
     event: MessageEvent<TMessage>,
   ): Promise<void> {
     if (event.data.Type in this.workerMessageHandlers) {
-      const handler = this.workerMessageHandlers[event.data.Type as TMessageTypes];
+      const handler =
+        this.workerMessageHandlers[event.data.Type as TMessageTypes];
 
       await handler?.(event.data);
     }

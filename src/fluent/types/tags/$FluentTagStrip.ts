@@ -1,7 +1,7 @@
-import type { $TagStrip } from '../../.deps.ts';
-import type { $FluentTagDataKeyOptions } from './$FluentTagDataKeyOptions.ts';
-import type { $FluentTagOptions } from './$FluentTagOptions.ts';
-import type { $FluentTagTypeOptions } from './$FluentTagTypeOptions.ts';
+import type { $TagStrip } from "../../.deps.ts";
+import type { $FluentTagDataKeyOptions } from "./$FluentTagDataKeyOptions.ts";
+import type { $FluentTagOptions } from "./$FluentTagOptions.ts";
+import type { $FluentTagTypeOptions } from "./$FluentTagTypeOptions.ts";
 
 /**
  * `$FluentTagStrip<T, TType, TTag, TData, TExact>` removes $FluentTag metadata from a property.

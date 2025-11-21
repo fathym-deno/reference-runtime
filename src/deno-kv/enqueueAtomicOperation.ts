@@ -1,4 +1,4 @@
-import type { DenoKVNonce } from './DenoKVNonce.ts';
+import type { DenoKVNonce } from "./DenoKVNonce.ts";
 
 /**
  * Enqueues an atomic operation with a nonce and optional delay.
@@ -15,10 +15,10 @@ export function enqueueAtomicOperation(
 ): Deno.AtomicOperation {
   msg.nonce = crypto.randomUUID();
 
-  op.check({ key: ['nonces', msg.nonce], versionstamp: null })
+  op.check({ key: ["nonces", msg.nonce], versionstamp: null })
     .enqueue(msg, { delay })
-    .set(['nonces', msg.nonce], true)
-    .sum(['enqueued_count'], 1n);
+    .set(["nonces", msg.nonce], true)
+    .sum(["enqueued_count"], 1n);
 
   return op;
 }

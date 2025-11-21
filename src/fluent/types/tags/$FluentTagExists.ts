@@ -1,7 +1,7 @@
-import type { $TagExists } from '../../.deps.ts';
-import type { $FluentTagDataKeyOptions } from './$FluentTagDataKeyOptions.ts';
-import type { $FluentTagOptions } from './$FluentTagOptions.ts';
-import type { $FluentTagTypeOptions } from './$FluentTagTypeOptions.ts';
+import type { $TagExists } from "../../.deps.ts";
+import type { $FluentTagDataKeyOptions } from "./$FluentTagDataKeyOptions.ts";
+import type { $FluentTagOptions } from "./$FluentTagOptions.ts";
+import type { $FluentTagTypeOptions } from "./$FluentTagTypeOptions.ts";
 
 /**
  * `$FluentTagExists<T, TType, TTag, TData>` checks if a `$FluentTag` exists within a type `T`.

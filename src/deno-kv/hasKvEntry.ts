@@ -1,4 +1,4 @@
-import { telemetryFor } from './.deps.ts';
+import { telemetryFor } from "./.deps.ts";
 
 /**
  * Determine if a key exists in a Deno.Kv instance.
@@ -11,7 +11,7 @@ export async function hasKvEntry(
   denoKv: Deno.Kv,
   key: Deno.KvKey,
 ): Promise<boolean> {
-  const logger = await telemetryFor(import.meta, 'deno-kv');
+  const logger = await telemetryFor(import.meta, "deno-kv");
 
   try {
     const entry = await denoKv.get(key);
@@ -19,7 +19,7 @@ export async function hasKvEntry(
     return !!entry?.value;
   } catch (err) {
     logger.error(
-      `There was an issue checking Deno KV for the entry: ${key.join('|')}`,
+      `There was an issue checking Deno KV for the entry: ${key.join("|")}`,
       { err },
     );
 

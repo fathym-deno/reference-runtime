@@ -1,4 +1,4 @@
-import type { DenoKVOAuth } from './.deps.ts';
+import type { DenoKVOAuth } from "./.deps.ts";
 
 /**
  * The OAuth helpers interface.
