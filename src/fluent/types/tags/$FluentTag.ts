@@ -1,8 +1,8 @@
-import type { $TagValues } from "../../.deps.ts";
-import type { $FluentTagTypeOptions } from "./$FluentTagTypeOptions.ts";
-import type { $FluentTagOptions } from "./$FluentTagOptions.ts";
-import type { $FluentTagDataKeyOptions } from "./$FluentTagDataKeyOptions.ts";
-import type { $FluentTagDataValueTypesOptions } from "./$FluentTagDataValueOptions.ts";
+import type { $TagValues } from '../../.deps.ts';
+import type { $FluentTagTypeOptions } from './$FluentTagTypeOptions.ts';
+import type { $FluentTagOptions } from './$FluentTagOptions.ts';
+import type { $FluentTagDataKeyOptions } from './$FluentTagDataKeyOptions.ts';
+import type { $FluentTagDataValueTypesOptions } from './$FluentTagDataValueOptions.ts';
 
 /**
  * `$FluentTag<TType, TTag, TData, TValues>` is used to apply Fluent tagging metadata to types,

@@ -1,5 +1,5 @@
-import { DenoKVOAuth } from "./.deps.ts";
-import type { OAuthHelpers } from "./OAuthHelpers.ts";
+import { DenoKVOAuth } from './.deps.ts';
+import type { OAuthHelpers } from './OAuthHelpers.ts';
 
 /**
  * Creates an OAuth helpers object.

@@ -1,6 +1,6 @@
 // deno-lint-ignore-file ban-types
-import type { $FluentTagExists } from "./$FluentTagExists.ts";
-import type { $FluentTagExtractValue } from "./$FluentTagExtractValue.ts";
+import type { $FluentTagExists } from './$FluentTagExists.ts';
+import type { $FluentTagExtractValue } from './$FluentTagExtractValue.ts';
 
 /**
  * `$FluentTagLoadHandlers<T[K]>` extracts the `handlers` from a `$FluentTag` on the `T[K]` property,
@@ -67,5 +67,6 @@ import type { $FluentTagExtractValue } from "./$FluentTagExtractValue.ts";
  */
 export type $FluentTagLoadHandlers<
   T,
-> = true extends $FluentTagExists<T, "Methods", never, "handlers"> ? $FluentTagExtractValue<T, "Methods", "handlers">
+> = true extends $FluentTagExists<T, 'Methods', never, 'handlers'>
+  ? $FluentTagExtractValue<T, 'Methods', 'handlers'>
   : {};

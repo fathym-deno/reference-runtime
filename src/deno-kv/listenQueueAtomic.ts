@@ -1,5 +1,5 @@
-import type { AtomicOperationHandler } from "./AtomicOperationHandler.ts";
-import type { DenoKVNonce } from "./DenoKVNonce.ts";
+import type { AtomicOperationHandler } from './AtomicOperationHandler.ts';
+import type { DenoKVNonce } from './DenoKVNonce.ts';
 
 /**
  * Listen for a message in the queue and apply the atomic operation handler.
@@ -24,13 +24,13 @@ export async function listenQueueAtomic(
     opKv = queueKv;
   }
 
-  const nonce = await queueKv.get<DenoKVNonce>(["nonces", msg.nonce]);
+  const nonce = await queueKv.get<DenoKVNonce>(['nonces', msg.nonce]);
 
   let atomic = queueKv
     .atomic()
     .check({ key: nonce.key, versionstamp: nonce.versionstamp })
     .delete(nonce.key)
-    .sum(["processed_count"], 1n);
+    .sum(['processed_count'], 1n);
 
   if (opKv !== queueKv) {
     const opAtomic = atomicOpHandler(opKv.atomic());

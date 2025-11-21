@@ -1,5 +1,5 @@
-import type { $TagExtract } from "../../.deps.ts";
-import type { $FluentTagTypeOptions } from "./$FluentTagTypeOptions.ts";
+import type { $TagExtract } from '../../.deps.ts';
+import type { $FluentTagTypeOptions } from './$FluentTagTypeOptions.ts';
 
 /**
  * `$FluentTagExtract<T, TType>` extracts the tag value from a $FluentTag type `T`

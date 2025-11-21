@@ -1,5 +1,5 @@
-import type { ValueType } from "jsr:@fathym/common/types";
-import type { $FluentTagDataValueTypesOptions } from "./tags/$FluentTagDataValueOptions.ts";
+import type { ValueType } from 'jsr:@fathym/common@0.2.287-integration/types';
+import type { $FluentTagDataValueTypesOptions } from './tags/$FluentTagDataValueOptions.ts';
 
 /**
  * `FluentBuilderMethodsHandlers` extracts and enforces strong typing for handler functions from
@@ -44,6 +44,6 @@ import type { $FluentTagDataValueTypesOptions } from "./tags/$FluentTagDataValue
  */
 export type FluentBuilderMethodsHandlers = {
   [handlerName: string]: ValueType<
-    $FluentTagDataValueTypesOptions<"Methods", "handlers">
+    $FluentTagDataValueTypesOptions<'Methods', 'handlers'>
   >;
 };

@@ -1,4 +1,4 @@
-import { exists, getPackageLogger, path } from "./.deps.ts";
+import { exists, path, telemetryFor } from './.deps.ts';
 
 /**
  * Initialize Deno.Kv instance.
@@ -7,13 +7,13 @@ import { exists, getPackageLogger, path } from "./.deps.ts";
  * @returns A Deno.Kv instance.
  */
 export async function initializeDenoKv(denoKvPath?: string): Promise<Deno.Kv> {
-  const logger = await getPackageLogger(import.meta, "deno-kv");
+  const logger = await telemetryFor(import.meta, 'deno-kv');
 
   logger.debug(`Initializing DenoKV at ${denoKvPath}`);
 
   if (
     denoKvPath &&
-    !denoKvPath.startsWith("https") &&
+    !denoKvPath.startsWith('https') &&
     !(await exists(denoKvPath))
   ) {
     const denoKvDir = path.dirname(denoKvPath);
@@ -24,8 +24,10 @@ export async function initializeDenoKv(denoKvPath?: string): Promise<Deno.Kv> {
       try {
         await Deno.mkdir(denoKvDir, { recursive: true });
       } catch (err) {
-        logger.warn(`There was an issure ensuring the directory: ${denoKvDir}`);
-        logger.warn(err);
+        logger.warn(
+          `There was an issue ensuring the directory: ${denoKvDir}`,
+          { err },
+        );
       }
     }
   }
@@ -34,7 +36,7 @@ export async function initializeDenoKv(denoKvPath?: string): Promise<Deno.Kv> {
 
   const kv = await Deno.openKv(denoKvPath);
 
-  logger.debug(`Inititialized DenoKV database: ${denoKvPath || "$default"}`);
+  logger.debug(`Inititialized DenoKV database: ${denoKvPath || '$default'}`);
 
   return kv;
 }

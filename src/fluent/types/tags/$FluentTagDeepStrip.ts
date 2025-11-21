@@ -1,6 +1,6 @@
-import type { $TagDeepStrip } from "../../.deps.ts";
-import type { $FluentTagOptions } from "./$FluentTagOptions.ts";
-import type { $FluentTagTypeOptions } from "./$FluentTagTypeOptions.ts";
+import type { $TagDeepStrip } from '../../.deps.ts';
+import type { $FluentTagOptions } from './$FluentTagOptions.ts';
+import type { $FluentTagTypeOptions } from './$FluentTagTypeOptions.ts';
 
 /**
  * `$FluentTagDeepStrip<T, TType, TTag>` is a utility type that recursively removes `$FluentTag`

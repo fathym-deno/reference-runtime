@@ -1,4 +1,4 @@
-import type { DenoKVOAuth } from "./.deps.ts";
+import type { DenoKVOAuth } from './.deps.ts';
 
 /**
  * Creates an Azure AD B2C OAuth2 client configuration.

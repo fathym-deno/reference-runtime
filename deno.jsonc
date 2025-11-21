@@ -2,7 +2,7 @@
   "name": "@fathym/runtime",
   "version": "0.0.0",
   "exports": {
-    ".": "./mod.ts"
+    ".": "./src/.exports.ts"
   },
   "license": "MIT",
   "tasks": {
@@ -12,8 +12,8 @@
     "check": "deno fmt --check && deno lint && deno check **/*.ts && deno check **/*.tsx",
     "deploy": "npx rimraf cov && deno task build && ftm git",
     "publish:check": "deno publish --dry-run --allow-dirty",
-    "test": "npx rimraf cov && deno test -A ./tests --coverage=cov",
-    "version": "deno run -A jsr:@fathym/common@0.2.274/build/version"
+    "test": "npx rimraf cov && deno test -A ./tests/.tests.ts --coverage=cov",
+    "version": "deno run -A jsr:@fathym/common@0.2.287-integration/build/version"
   },
   "imports": {},
   "exclude": [

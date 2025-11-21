@@ -1,8 +1,9 @@
 export const FathymWorkerMessageTypes = {
-  Init: "init",
-  Correlate: "correlate",
-  Ping: "ping",
-  Terminate: "terminate",
+  Init: 'init',
+  Correlate: 'correlate',
+  Ping: 'ping',
+  Terminate: 'terminate',
 };
 
-export type FathymWorkerMessageTypes = (typeof FathymWorkerMessageTypes)[keyof typeof FathymWorkerMessageTypes];
+export type FathymWorkerMessageTypes =
+  (typeof FathymWorkerMessageTypes)[keyof typeof FathymWorkerMessageTypes];
