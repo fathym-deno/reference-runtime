@@ -1,4 +1,4 @@
-import type { IsRecord } from 'jsr:@fathym/common@0.2.289-integration/types';
+import { IsRecord } from '../.deps.ts';
 import type { $FluentTagExtract } from './tags/$FluentTagExtract.ts';
 
 export type IsFluentRecord<T> = 'Record' extends $FluentTagExtract<T, 'Methods'> ? true

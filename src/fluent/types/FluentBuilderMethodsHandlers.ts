@@ -1,4 +1,4 @@
-import type { ValueType } from 'jsr:@fathym/common@0.2.289-integration/types';
+import { ValueType } from '../.deps.ts';
 import type { $FluentTagDataValueTypesOptions } from './tags/$FluentTagDataValueOptions.ts';
 
 /**
