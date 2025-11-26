@@ -1,3 +1,3 @@
-export { jsonMapSetClone } from 'jsr:@fathym/common@0.2.297/iterables/json-map-set';
-export * from 'jsr:@fathym/common@0.2.297/types';
-export * from 'jsr:@fathym/common@0.2.297/tags';
+export { jsonMapSetClone } from 'jsr:@fathym/common@0.2.298/iterables/json-map-set';
+export * from 'jsr:@fathym/common@0.2.298/types';
+export * from 'jsr:@fathym/common@0.2.298/tags';
