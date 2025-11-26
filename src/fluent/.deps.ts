@@ -1,3 +1,23 @@
 export { jsonMapSetClone } from 'jsr:@fathym/common@0.2.298/iterables/json-map-set';
-export * from 'jsr:@fathym/common@0.2.298/types';
-export * from 'jsr:@fathym/common@0.2.298/tags';
+export type {
+  ExtractExact,
+  ExtractKeysByPrefix,
+  IsNativeType,
+  IsObject,
+  IsObjectNotNative,
+  IsRecord,
+  NoPropertiesUndefined,
+  RemoveIndexSignatures,
+  ValueType,
+} from 'jsr:@fathym/common@0.2.298/types';
+export type {
+  $TagDeepStrip,
+  $TagExists,
+  $TagExtract,
+  $TagExtractDataKeys,
+  $TagExtractValue,
+  $TagExtractValueAndStrip,
+  $TagExtractValues,
+  $TagStrip,
+  $TagValues,
+} from 'jsr:@fathym/common@0.2.298/tags';
