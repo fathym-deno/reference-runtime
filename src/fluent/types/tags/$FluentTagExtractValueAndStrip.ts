@@ -1,7 +1,7 @@
-import type { $TagExtractValueAndStrip } from '../../.deps.ts';
-import type { $FluentTagDataKeyOptions } from './$FluentTagDataKeyOptions.ts';
-import type { $FluentTagOptions } from './$FluentTagOptions.ts';
-import type { $FluentTagTypeOptions } from './$FluentTagTypeOptions.ts';
+import type { $TagExtractValueAndStrip } from "../../.deps.ts";
+import type { $FluentTagDataKeyOptions } from "./$FluentTagDataKeyOptions.ts";
+import type { $FluentTagOptions } from "./$FluentTagOptions.ts";
+import type { $FluentTagTypeOptions } from "./$FluentTagTypeOptions.ts";
 
 /**
  * `$FluentTagExtractValueAndStrip<T, TType, TTag, TData>` extracts the tag data value from a `$FluentTag` type `T`

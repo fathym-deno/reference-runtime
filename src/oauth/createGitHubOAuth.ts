@@ -1,6 +1,6 @@
-import { createGitHubOAuthConfig } from './createGitHubOAuthConfig.ts';
-import { createOAuthHelpers } from './createOAuthHelpers.ts';
-import type { OAuthHelpers } from './OAuthHelpers.ts';
+import { createGitHubOAuthConfig } from "./createGitHubOAuthConfig.ts";
+import { createOAuthHelpers } from "./createOAuthHelpers.ts";
+import type { OAuthHelpers } from "./OAuthHelpers.ts";
 
 /**
  * Creates an OAuth helpers object for GitHub OAuth.

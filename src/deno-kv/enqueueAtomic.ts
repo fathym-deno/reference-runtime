@@ -1,6 +1,6 @@
-import type { AtomicOperationHandler } from './AtomicOperationHandler.ts';
-import type { DenoKVNonce } from './DenoKVNonce.ts';
-import { enqueueAtomicOperation } from './enqueueAtomicOperation.ts';
+import type { AtomicOperationHandler } from "./AtomicOperationHandler.ts";
+import type { DenoKVNonce } from "./DenoKVNonce.ts";
+import { enqueueAtomicOperation } from "./enqueueAtomicOperation.ts";
 
 /**
  * Enqueues an atomic operation and returns the result.
