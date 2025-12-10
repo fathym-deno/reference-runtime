@@ -10,4 +10,4 @@
  * // FluentTagType: "Methods"
  * ```
  */
-export type $FluentTagTypeOptions = "Methods";
+export type $FluentTagTypeOptions = 'Methods';

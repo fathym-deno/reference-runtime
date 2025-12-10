@@ -1,4 +1,4 @@
-import type { $FluentTagTypeOptions } from "./$FluentTagTypeOptions.ts";
+import type { $FluentTagTypeOptions } from './$FluentTagTypeOptions.ts';
 
 /**
  * `$FluentTagMethodsOptions` provides specific options for the `"Methods"` tag type.
@@ -10,7 +10,7 @@ import type { $FluentTagTypeOptions } from "./$FluentTagTypeOptions.ts";
  * - `"Object"`: Tag for objects.
  * - `"Property"`: Tag for properties.
  */
-export type $FluentTagMethodsOptions = "Record" | "Object" | "Property";
+export type $FluentTagMethodsOptions = 'Record' | 'Object' | 'Property';
 
 /**
  * `$FluentTagOptions<TTagType>` maps the provided tag type to its corresponding tag options.
@@ -31,6 +31,6 @@ export type $FluentTagMethodsOptions = "Record" | "Object" | "Property";
  * - For `"Methods"` tag type: Provides options `"Record" | "Object" | "Property"`.
  * - For unrecognized tag types: Returns `never`.
  */
-export type $FluentTagOptions<TTagType extends $FluentTagTypeOptions> =
-  TTagType extends "Methods" ? $FluentTagMethodsOptions
-    : never;
+export type $FluentTagOptions<TTagType extends $FluentTagTypeOptions> = TTagType extends 'Methods'
+  ? $FluentTagMethodsOptions
+  : never;

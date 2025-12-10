@@ -1,6 +1,6 @@
-import type { NoPropertiesUndefined } from "../.deps.ts";
-import type { DetermineEaCFluentMethods } from "./DetermineEaCFluentMethods.ts";
-import type { $FluentTagStrip } from "./tags/$FluentTagStrip.ts";
+import type { NoPropertiesUndefined } from '../.deps.ts';
+import type { DetermineEaCFluentMethods } from './DetermineEaCFluentMethods.ts';
+import type { $FluentTagStrip } from './tags/$FluentTagStrip.ts';
 
 /**
  * `SelectFluentMethods<T, TBuilderModel>` processes a type `T` and selects the appropriate Fluent methods based on the type of the properties.
@@ -52,8 +52,7 @@ import type { $FluentTagStrip } from "./tags/$FluentTagStrip.ts";
  * // }
  * ```
  */
-export type SelectFluentMethods<T, TBuilderModel> = T extends infer U
-  ? $FluentTagStrip<
+export type SelectFluentMethods<T, TBuilderModel> = T extends infer U ? $FluentTagStrip<
     NoPropertiesUndefined<
       {
         [
@@ -64,7 +63,7 @@ export type SelectFluentMethods<T, TBuilderModel> = T extends infer U
         ]: DetermineEaCFluentMethods<U, K, TBuilderModel>;
       }
     >,
-    "Methods"
+    'Methods'
   >
   : T;
 

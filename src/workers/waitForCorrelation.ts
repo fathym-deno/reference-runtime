@@ -1,6 +1,6 @@
-import { delay } from "./.deps.ts";
-import type { FathymWorkerMessage } from "./FathymWorkerMessage.ts";
-import { FathymWorkerMessageTypes } from "./FathymWorkerMessageTypes.ts";
+import { delay } from './.deps.ts';
+import type { FathymWorkerMessage } from './FathymWorkerMessage.ts';
+import { FathymWorkerMessageTypes } from './FathymWorkerMessageTypes.ts';
 
 export function correlateResult(
   worker: Worker,
@@ -52,13 +52,13 @@ export function waitForCorrelation(
 ): Promise<Record<string, unknown> | undefined> {
   return new Promise((resolve) => {
     worker.addEventListener(
-      "message",
+      'message',
       function handleCorrelation(event: MessageEvent<FathymWorkerMessage>) {
         if (
           event.data.Type === FathymWorkerMessageTypes.Correlate &&
           event.data.CorrelationID === correlationId
         ) {
-          worker.removeEventListener("message", handleCorrelation);
+          worker.removeEventListener('message', handleCorrelation);
 
           resolve(event.data.Payload);
         }
@@ -74,13 +74,13 @@ export function waitForCorrelationSync(
   let result: Record<string, unknown> | undefined = undefined;
 
   worker.addEventListener(
-    "message",
+    'message',
     function handleCorrelation(event: MessageEvent<FathymWorkerMessage>) {
       if (
         event.data.Type === FathymWorkerMessageTypes.Correlate &&
         event.data.CorrelationID === correlationId
       ) {
-        worker.removeEventListener("message", handleCorrelation);
+        worker.removeEventListener('message', handleCorrelation);
 
         result = event.data.Payload;
       }
@@ -99,13 +99,13 @@ export function waitForCorrelationSync(
 export function waitForPing(worker: Worker): Promise<void> {
   return new Promise((resolve) => {
     worker.addEventListener(
-      "message",
+      'message',
       function waitForPing(ev: MessageEvent<FathymWorkerMessage>) {
         if (ev.data.Type === FathymWorkerMessageTypes.Ping) {
           delay(1000).then(() => {
             resolve();
 
-            worker.removeEventListener("message", waitForPing);
+            worker.removeEventListener('message', waitForPing);
           });
         }
       },

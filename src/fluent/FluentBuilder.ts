@@ -1,8 +1,8 @@
 // deno-lint-ignore-file no-explicit-any
-import { jsonMapSetClone, type ValueType } from "./.deps.ts";
-import type { FluentBuilderRoot } from "./FluentBuilderRoot.ts";
-import type { FluentBuilderMethodsHandlers } from "./types/FluentBuilderMethodsHandlers.ts";
-import type { SelectFluentMethods } from "./types/SelectFluentMethods.ts";
+import { jsonMapSetClone, type ValueType } from './.deps.ts';
+import type { FluentBuilderRoot } from './FluentBuilderRoot.ts';
+import type { FluentBuilderMethodsHandlers } from './types/FluentBuilderMethodsHandlers.ts';
+import type { SelectFluentMethods } from './types/SelectFluentMethods.ts';
 
 export function fluentBuilder<TBuilderModel>(
   model?: TBuilderModel,
@@ -72,7 +72,7 @@ export class FluentBuilder<TBuilderModel> {
       eacWorking = eacWorking[nextKey] as Record<string, unknown>;
     });
 
-    return newModel?.["Root"] as TExport;
+    return newModel?.['Root'] as TExport;
   }
 
   public With(
@@ -144,16 +144,12 @@ export class FluentBuilder<TBuilderModel> {
 
     const currentKeyDepth = [
       ...(keys ?? []),
-      ...(isProp
-        ? [result.Prop]
-        : isRecord
-        ? result.Keys.slice(0, -1)
-        : result.Keys),
+      ...(isProp ? [result.Prop] : isRecord ? result.Keys.slice(0, -1) : result.Keys),
     ];
 
     const cleanKeys: string[] = currentKeyDepth
       .filter((k) => k)
-      .map((k) => (k.startsWith("_") ? k.slice(1).toString() : k));
+      .map((k) => (k.startsWith('_') ? k.slice(1).toString() : k));
 
     cleanKeys.reduce((working, key, i) => {
       if (i === cleanKeys.length - 1) {
@@ -167,13 +163,13 @@ export class FluentBuilder<TBuilderModel> {
 
     const nextKeyDepth = [
       ...applyTarget.keyDepth.slice(0, backStep ? -1 : undefined),
-      ...(keys ?? []).map((k) => (k.startsWith("_") ? k.slice(1) : k)),
+      ...(keys ?? []).map((k) => (k.startsWith('_') ? k.slice(1) : k)),
       ...result.Keys,
     ];
 
     const bldr = new FluentBuilder<TBuilderModel>(
       nextKeyDepth,
-      applyTarget.model["Root"],
+      applyTarget.model['Root'],
       applyTarget.handlers,
     );
 
@@ -185,7 +181,7 @@ export class FluentBuilder<TBuilderModel> {
     const toProxy = Object.assign(
       (..._args: any[]) => {
         return new Deno.errors.NotSupported(
-          "This method should be covered up by the proxy.",
+          'This method should be covered up by the proxy.',
         );
       },
       this, // Copy properties from the class instance
@@ -225,14 +221,14 @@ export class FluentBuilder<TBuilderModel> {
     return new Proxy(
       () => {
         throw new Deno.errors.NotSupported(
-          "The Proxy should be taking over the actual method execution.",
+          'The Proxy should be taking over the actual method execution.',
         );
       },
       {
         get(virtualTarget, virtualProp, virtualReceiver) {
           if (virtualProp in virtualTarget) {
             return Reflect.get(virtualTarget, virtualProp, virtualReceiver);
-          } else if (virtualProp.toString().startsWith("$")) {
+          } else if (virtualProp.toString().startsWith('$')) {
             return target.loadProxyHandler([
               prop.toString(),
               // virtualProp.toString(),
@@ -266,9 +262,7 @@ export class FluentBuilder<TBuilderModel> {
       newValue = target.workingRecords(backStep)[prop.toString()] ?? {};
     }
 
-    return newValue
-      ? { Keys: newKeys, Prop: prop.toString(), Value: newValue }
-      : undefined;
+    return newValue ? { Keys: newKeys, Prop: prop.toString(), Value: newValue } : undefined;
   }
 
   protected executeVirtualProperty(
@@ -288,9 +282,7 @@ export class FluentBuilder<TBuilderModel> {
       newValue = value;
     }
 
-    return newValue
-      ? { Keys: newKeys, Prop: prop.toString(), Value: newValue }
-      : undefined;
+    return newValue ? { Keys: newKeys, Prop: prop.toString(), Value: newValue } : undefined;
   }
 
   protected executeVirtualRecord(
@@ -318,9 +310,7 @@ export class FluentBuilder<TBuilderModel> {
       }
     }
 
-    return newValue
-      ? { Keys: newKeys, Prop: prop.toString(), Value: newValue }
-      : undefined;
+    return newValue ? { Keys: newKeys, Prop: prop.toString(), Value: newValue } : undefined;
   }
 
   protected loadProxyHandler(keys?: string[]): ProxyHandler<this> {

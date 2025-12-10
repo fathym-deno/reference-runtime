@@ -1,6 +1,6 @@
-import type { DefaultFluentMethods } from "./DefaultFluentMethods.ts";
-import type { DetermineFluentMethodsType } from "./DetermineFluentMethodsType.ts";
-import type { FluentMethodsMap } from "./FluentMethodsMap.ts";
+import type { DefaultFluentMethods } from './DefaultFluentMethods.ts';
+import type { DetermineFluentMethodsType } from './DetermineFluentMethodsType.ts';
+import type { FluentMethodsMap } from './FluentMethodsMap.ts';
 
 export type DetermineEaCFluentMethods<
   T,
