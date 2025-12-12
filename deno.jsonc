@@ -18,7 +18,7 @@
     "deploy": "npx rimraf cov && deno task build && deno task publish:check && fathym git",
     "publish:check": "deno publish --dry-run --allow-dirty",
     "test": "npx rimraf cov && deno test -A ./tests/.tests.ts --coverage=cov",
-    "version": "deno run -A jsr:@fathym/common@0.2.306/build/version"
+    "version": "deno run -A jsr:@fathym/common@0.2.307-common-release/build/version"
   },
   "imports": {},
   "exclude": [
